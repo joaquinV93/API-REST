@@ -1,0 +1,587 @@
+{
+	"info": {
+		"_postman_id": "91ef7809-fcd3-410e-9550-b958f78aaf15",
+		"name": "/products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Requets con todos los productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request sin la variable sort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?field=name,brand&id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "field",
+							"value": "name,brand"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Requets con field e id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?field=name,brand&id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "field",
+							"value": "name,brand"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Requets con id decendente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?field=id,name,brand&sort=id-&brand=huawei",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "field",
+							"value": "id,name,brand"
+						},
+						{
+							"key": "sort",
+							"value": "id-"
+						},
+						{
+							"key": "brand",
+							"value": "huawei"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Requets con id y name decendente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?field=id,name,brand&sort=id-,name-&brand=huawei",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "field",
+							"value": "id,name,brand"
+						},
+						{
+							"key": "sort",
+							"value": "id-,name-"
+						},
+						{
+							"key": "brand",
+							"value": "huawei"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Requets con created_at",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?field=id,name,created_at,brand&brand=huawei",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "field",
+							"value": "id,name,created_at,brand"
+						},
+						{
+							"key": "brand",
+							"value": "huawei"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Agregar producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?name=Xiaomi OPPO 3H&brand=Xiaomi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Xiaomi OPPO 3H"
+						},
+						{
+							"key": "brand",
+							"value": "Xiaomi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Agregar producto#2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?name=Xiaomi Redmi 8&brand=Xiaomi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Xiaomi Redmi 8"
+						},
+						{
+							"key": "brand",
+							"value": "Xiaomi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Agregar producto#3 Fallo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?name=Xiaomi Color full Pad 3lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllh&brand=Xiaomi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Xiaomi Color full Pad 3lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllh"
+						},
+						{
+							"key": "brand",
+							"value": "Xiaomi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Agregar producto#4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/?name=Xiaomi Color full Pad&brand=Xiaomi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Xiaomi Color full Pad"
+						},
+						{
+							"key": "brand",
+							"value": "Xiaomi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Fetch Devolver producto #1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Fetch Devolver producto #2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Fetch Devolver producto #3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Fetch Devolver producto #4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update  PUT #1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/7?name=MobileBAG&brand=Mobile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"7"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "MobileBAG"
+						},
+						{
+							"key": "brand",
+							"value": "Mobile"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update  PUT #2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/3?name=Huawey G8d&brand=Huawei",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Huawey G8d"
+						},
+						{
+							"key": "brand",
+							"value": "Huawei"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update  PATCH #1",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/4?name=Black Berry H334 G8d&brand=BlackBerry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Black Berry H334 G8d"
+						},
+						{
+							"key": "brand",
+							"value": "BlackBerry"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update  PATCH #2",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/1?name=Ryzen 7 SSg G8d&brand=AMD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Ryzen 7 SSg G8d"
+						},
+						{
+							"key": "brand",
+							"value": "AMD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete DESTROY  #1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete DESTROY  #2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete DESTROY  #3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete DESTROY  #4",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
